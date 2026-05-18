@@ -8,7 +8,7 @@ function scrollToSection(id) {
 
 document.addEventListener('DOMContentLoaded', function () {
 
-    // --- Navbar scroll effect ---
+    // --- Navbar scroll ---
     const navbar = document.getElementById('navbar');
     window.addEventListener('scroll', () => {
         navbar.classList.toggle('scrolled', window.scrollY > 40);
@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // --- Mobile menu ---
     const hamburger = document.getElementById('hamburger');
-    const overlay = document.getElementById('mobileOverlay');
+    const overlay   = document.getElementById('mobileOverlay');
 
     function toggleMenu(force) {
         const open = force !== undefined ? force : !hamburger.classList.contains('open');
@@ -27,73 +27,51 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     hamburger.addEventListener('click', () => toggleMenu());
+    document.querySelectorAll('.mobile-link').forEach(l => l.addEventListener('click', () => toggleMenu(false)));
+    overlay.addEventListener('click', e => { if (e.target === overlay) toggleMenu(false); });
 
-    document.querySelectorAll('.mobile-link').forEach(link => {
-        link.addEventListener('click', () => toggleMenu(false));
-    });
-
-    // Close on backdrop click
-    overlay.addEventListener('click', (e) => {
-        if (e.target === overlay) toggleMenu(false);
-    });
-
-    // --- Active nav link on scroll ---
+    // --- Active nav link ---
     const navLinks = document.querySelectorAll('.nav-link');
     const sections = document.querySelectorAll('section[id]');
 
-    function updateActiveLink() {
+    function updateActive() {
         let current = '';
-        sections.forEach(section => {
-            if (window.scrollY >= section.offsetTop - 120) {
-                current = section.id;
-            }
-        });
-        navLinks.forEach(link => {
-            link.classList.toggle('active', link.getAttribute('href') === `#${current}`);
-        });
+        sections.forEach(s => { if (window.scrollY >= s.offsetTop - 140) current = s.id; });
+        navLinks.forEach(l => l.classList.toggle('active', l.getAttribute('href') === `#${current}`));
     }
+    window.addEventListener('scroll', updateActive, { passive: true });
+    updateActive();
 
-    window.addEventListener('scroll', updateActiveLink, { passive: true });
-    updateActiveLink();
-
-    // --- Reveal on scroll ---
+    // --- Scroll reveal ---
     const revealEls = document.querySelectorAll('.reveal');
 
     if ('IntersectionObserver' in window) {
         const io = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
+            entries.forEach((entry, i) => {
                 if (entry.isIntersecting) {
+                    entry.target.style.transitionDelay = `${(i % 3) * 0.08}s`;
                     entry.target.classList.add('visible');
                     io.unobserve(entry.target);
                 }
             });
-        }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+        }, { threshold: 0.1, rootMargin: '0px 0px -30px 0px' });
 
-        revealEls.forEach((el, i) => {
-            el.style.transitionDelay = `${(i % 3) * 0.1}s`;
-            io.observe(el);
-        });
+        revealEls.forEach(el => io.observe(el));
     } else {
         revealEls.forEach(el => el.classList.add('visible'));
     }
 
     // --- Contact form ---
-    const form = document.getElementById('contactForm');
+    const form      = document.getElementById('contactForm');
     const submitBtn = document.getElementById('submitBtn');
-    const successMsg = document.getElementById('formSuccess');
+    const success   = document.getElementById('formSuccess');
 
     if (form) {
-        form.addEventListener('submit', function (e) {
-            const original = submitBtn.innerHTML;
-            submitBtn.innerHTML = 'Sending…';
+        form.addEventListener('submit', () => {
+            const orig = submitBtn.textContent;
+            submitBtn.textContent = 'Sending…';
             submitBtn.disabled = true;
-
-            // Restore button if formspree redirects back or errors
-            setTimeout(() => {
-                submitBtn.innerHTML = original;
-                submitBtn.disabled = false;
-            }, 5000);
+            setTimeout(() => { submitBtn.textContent = orig; submitBtn.disabled = false; }, 5000);
         });
     }
-
 });
