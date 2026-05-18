@@ -1,130 +1,77 @@
 /* ==========================================================================
-   Synova - Interactive Features
+   Synova — Interactive Features
    ========================================================================== */
 
-// Smooth scroll to contact section
-function scrollToContact() {
-    document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
+function scrollToSection(id) {
+    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
 }
 
-// Mobile menu toggle
-document.addEventListener('DOMContentLoaded', function() {
-    const hamburger = document.querySelector('.hamburger');
-    const navMenu = document.querySelector('.nav-menu');
+document.addEventListener('DOMContentLoaded', function () {
 
-    if (hamburger) {
-        hamburger.addEventListener('click', function() {
-            navMenu.classList.toggle('active');
-            hamburger.classList.toggle('active');
-        });
+    // --- Navbar scroll ---
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+        navbar.classList.toggle('scrolled', window.scrollY > 40);
+    }, { passive: true });
+
+    // --- Mobile menu ---
+    const hamburger = document.getElementById('hamburger');
+    const overlay   = document.getElementById('mobileOverlay');
+
+    function toggleMenu(force) {
+        const open = force !== undefined ? force : !hamburger.classList.contains('open');
+        hamburger.classList.toggle('open', open);
+        overlay.classList.toggle('open', open);
+        hamburger.setAttribute('aria-expanded', String(open));
+        document.body.style.overflow = open ? 'hidden' : '';
     }
 
-    // Close menu when a link is clicked
-    const navLinks = document.querySelectorAll('.nav-menu a');
-    navLinks.forEach(link => {
-        link.addEventListener('click', function() {
-            navMenu.classList.remove('active');
-            hamburger.classList.remove('active');
-        });
-    });
+    hamburger.addEventListener('click', () => toggleMenu());
+    document.querySelectorAll('.mobile-link').forEach(l => l.addEventListener('click', () => toggleMenu(false)));
+    overlay.addEventListener('click', e => { if (e.target === overlay) toggleMenu(false); });
 
-    // Add scroll effect to navbar
-    window.addEventListener('scroll', function() {
-        const navbar = document.querySelector('.navbar');
-        if (window.scrollY > 50) {
-            navbar.style.boxShadow = '0 10px 25px -5px rgba(0, 0, 0, 0.3)';
-        } else {
-            navbar.style.boxShadow = 'none';
-        }
-    });
+    // --- Active nav link ---
+    const navLinks = document.querySelectorAll('.nav-link');
+    const sections = document.querySelectorAll('section[id]');
 
-    // Intersection Observer for fade-in animations
-    const observerOptions = {
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
-    };
-
-    const observer = new IntersectionObserver(function(entries) {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.style.opacity = '1';
-                entry.target.style.transform = 'translateY(0)';
-                observer.unobserve(entry.target);
-            }
-        });
-    }, observerOptions);
-
-    // Observe all section elements
-    const sections = document.querySelectorAll('section');
-    sections.forEach(section => {
-        section.style.opacity = '0';
-        section.style.transform = 'translateY(20px)';
-        section.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
-        observer.observe(section);
-    });
-
-    // Observe product cards
-    const productCards = document.querySelectorAll('.product-card');
-    productCards.forEach(card => {
-        observer.observe(card);
-    });
-
-    // Observe feature cards
-    const features = document.querySelectorAll('.feature');
-    features.forEach(feature => {
-        feature.style.opacity = '0';
-        feature.style.transform = 'translateY(20px)';
-        feature.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
-        observer.observe(feature);
-    });
-
-    // Contact form handler
-    const contactForm = document.querySelector('.contact-form');
-    if (contactForm) {
-        contactForm.addEventListener('submit', function(e) {
-            const submitBtn = contactForm.querySelector('button[type="submit"]');
-            const originalText = submitBtn.textContent;
-            
-            // Change button text to indicate loading
-            submitBtn.textContent = 'Sending...';
-            submitBtn.disabled = true;
-        });
-    }
-});
-
-// Smooth active link highlighting
-document.addEventListener('DOMContentLoaded', function() {
-    const navLinks = document.querySelectorAll('.nav-menu a');
-    const sections = document.querySelectorAll('section');
-
-    window.addEventListener('scroll', function() {
+    function updateActive() {
         let current = '';
-        
-        sections.forEach(section => {
-            const sectionTop = section.offsetTop;
-            const sectionHeight = section.clientHeight;
-            if (scrollY >= (sectionTop - 200)) {
-                current = section.getAttribute('id');
-            }
-        });
+        sections.forEach(s => { if (window.scrollY >= s.offsetTop - 140) current = s.id; });
+        navLinks.forEach(l => l.classList.toggle('active', l.getAttribute('href') === `#${current}`));
+    }
+    window.addEventListener('scroll', updateActive, { passive: true });
+    updateActive();
 
-        navLinks.forEach(link => {
-            link.classList.remove('active');
-            if (link.getAttribute('href').includes(current)) {
-                link.classList.add('active');
-            }
+    // --- Scroll reveal ---
+    const revealEls = document.querySelectorAll('.reveal');
+
+    if ('IntersectionObserver' in window) {
+        const io = new IntersectionObserver((entries) => {
+            entries.forEach((entry, i) => {
+                if (entry.isIntersecting) {
+                    entry.target.style.transitionDelay = `${(i % 3) * 0.08}s`;
+                    entry.target.classList.add('visible');
+                    io.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1, rootMargin: '0px 0px -30px 0px' });
+
+        revealEls.forEach(el => io.observe(el));
+    } else {
+        revealEls.forEach(el => el.classList.add('visible'));
+    }
+
+    // --- Contact form ---
+    const form      = document.getElementById('contactForm');
+    const submitBtn = document.getElementById('submitBtn');
+    const success   = document.getElementById('formSuccess');
+
+    if (form) {
+        form.addEventListener('submit', () => {
+            const orig = submitBtn.textContent;
+            submitBtn.textContent = 'Sending…';
+            submitBtn.disabled = true;
+            setTimeout(() => { submitBtn.textContent = orig; submitBtn.disabled = false; }, 5000);
         });
-    });
+    }
 });
-
-// Performance optimization: Lazy load animations
-if ('IntersectionObserver' in window) {
-    // Observer already implemented above
-} else {
-    // Fallback for older browsers
-    const allAnimatedElements = document.querySelectorAll('section, .product-card, .feature');
-    allAnimatedElements.forEach(el => {
-        el.style.opacity = '1';
-        el.style.transform = 'translateY(0)';
-    });
-}
