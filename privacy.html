@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Synova Privacy Policy - How we protect your data and privacy">
+    <meta name="theme-color" content="#0f172a">
+    <title>Privacy Policy - Synova</title>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect fill='%230f172a' width='100' height='100'/><circle cx='50' cy='50' r='35' fill='%2360a5fa'/><circle cx='50' cy='50' r='25' fill='%230f172a'/><circle cx='50' cy='50' r='15' fill='%2360a5fa'/></svg>">
+    <style>
+        /* ==========================================================================
+           Synova - Privacy Policy Page
+           ========================================================================== */
+
+        :root {
+            --primary-color: #0f172a;
+            --secondary-color: #1e293b;
+            --accent-color: #60a5fa;
+            --accent-dark: #3b82f6;
+            --text-primary: #f1f5f9;
+            --text-secondary: #cbd5e1;
+            --text-muted: #94a3b8;
+            --border-color: #334155;
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: linear-gradient(135deg, #0f172a 0%, #1a1f35 100%);
+            color: var(--text-primary);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Navigation */
+        .navbar {
+            background: rgba(15, 23, 42, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border-color);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .navbar .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-logo {
+            font-size: 1.3rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--accent-color), var(--accent-dark));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover {
+            color: var(--accent-color);
+        }
+
+        /* Header */
+        header {
+            padding: 3rem 0 2rem;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(135deg, var(--accent-color), var(--text-primary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .last-updated {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-top: 1rem;
+        }
+
+        /* Main Content */
+        main {
+            padding: 2rem 0 4rem;
+        }
+
+        .policy-section {
+            margin-bottom: 3rem;
+            background: rgba(96, 165, 250, 0.05);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 2rem;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            color: var(--accent-color);
+            margin-bottom: 1rem;
+            margin-top: 0;
+        }
+
+        h3 {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+        }
+
+        p {
+            margin-bottom: 1rem;
+            color: var(--text-secondary);
+            line-height: 1.8;
+        }
+
+        ul, ol {
+            margin-left: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--text-secondary);
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+
+        strong {
+            color: var(--text-primary);
+        }
+
+        a {
+            color: var(--accent-color);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .contact-info {
+            background: rgba(60, 130, 246, 0.1);
+            border-left: 4px solid var(--accent-color);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 2rem 0;
+        }
+
+        /* Footer */
+        footer {
+            background: #0a0f1a;
+            border-top: 1px solid var(--border-color);
+            padding: 2rem 0;
+            text-align: center;
+            color: var(--text-muted);
+        }
+
+        footer a {
+            color: var(--text-secondary);
+        }
+
+        footer a:hover {
+            color: var(--accent-color);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            .policy-section {
+                padding: 1.5rem;
+            }
+
+            h2 {
+                font-size: 1.3rem;
+            }
+
+            .nav-links {
+                gap: 1rem;
+                font-size: 0.9rem;
+            }
+        }
+
+        .toc {
+            background: rgba(96, 165, 250, 0.05);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .toc h3 {
+            margin-top: 0;
+        }
+
+        .toc ul {
+            list-style: none;
+            margin-left: 0;
+        }
+
+        .toc li {
+            margin-bottom: 0.75rem;
+        }
+
+        .toc a {
+            color: var(--accent-color);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="nav-logo">◆ Synova</a>
+            <ul class="nav-links">
+                <li><a href="index.html#home">Home</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="privacy.html">Privacy</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <h1>Privacy Policy</h1>
+            <p class="last-updated">Last Updated: May 18, 2026</p>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <div class="container">
+            <!-- Table of Contents -->
+            <div class="toc">
+                <h3>Contents</h3>
+                <ul>
+                    <li><a href="#introduction">Introduction</a></li>
+                    <li><a href="#information-we-collect">Information We Collect</a></li>
+                    <li><a href="#how-we-use">How We Use Information</a></li>
+                    <li><a href="#data-sharing">Data Sharing & Disclosure</a></li>
+                    <li><a href="#data-security">Data Security</a></li>
+                    <li><a href="#user-rights">Your Rights</a></li>
+                    <li><a href="#retention">Data Retention</a></li>
+                    <li><a href="#children">Children's Privacy</a></li>
+                    <li><a href="#third-party">Third-Party Links</a></li>
+                    <li><a href="#international">International Transfers</a></li>
+                    <li><a href="#contact">Contact Us</a></li>
+                </ul>
+            </div>
+
+            <!-- Introduction -->
+            <section class="policy-section" id="introduction">
+                <h2>1. Introduction</h2>
+                <p>
+                    Synova ("Company," "we," "our," or "us") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website, services, and products.
+                </p>
+                <p>
+                    Please read this Privacy Policy carefully. If you do not agree with our policies and practices, please do not use our services.
+                </p>
+            </section>
+
+            <!-- Information We Collect -->
+            <section class="policy-section" id="information-we-collect">
+                <h2>2. Information We Collect</h2>
+
+                <h3>Information You Provide Directly</h3>
+                <ul>
+                    <li><strong>Contact Information:</strong> When you contact us via email or through our website, we may collect your name, email address, phone number, and message content.</li>
+                    <li><strong>Account Information:</strong> If you create an account, we collect login credentials, profile information, and preferences.</li>
+                    <li><strong>Communication Data:</strong> We collect information you provide when communicating with us through support channels, surveys, or feedback forms.</li>
+                </ul>
+
+                <h3>Information Collected Automatically</h3>
+                <ul>
+                    <li><strong>Device Information:</strong> Browser type, operating system, device type, and unique device identifiers.</li>
+                    <li><strong>Usage Data:</strong> Pages visited, time spent on pages, referral sources, and interactions with our website.</li>
+                    <li><strong>Location Data:</strong> Approximate location based on IP address (not precise GPS coordinates without explicit consent).</li>
+                    <li><strong>Cookies & Similar Technologies:</strong> We use cookies and similar tracking technologies to enhance user experience and analytics.</li>
+                </ul>
+
+                <h3>Information from Third Parties</h3>
+                <ul>
+                    <li>Data from analytics providers and advertising partners (in compliance with privacy laws).</li>
+                    <li>Information shared through social media platforms (if you connect your social account).</li>
+                </ul>
+            </section>
+
+            <!-- How We Use Information -->
+            <section class="policy-section" id="how-we-use">
+                <h2>3. How We Use Your Information</h2>
+                <p>We use the information we collect for the following purposes:</p>
+                <ul>
+                    <li><strong>Service Delivery:</strong> To provide, maintain, and improve our products and services.</li>
+                    <li><strong>Communication:</strong> To respond to your inquiries, send you updates, and provide customer support.</li>
+                    <li><strong>Analytics & Improvement:</strong> To understand how you use our services and optimize user experience.</li>
+                    <li><strong>Marketing:</strong> To send promotional materials (with your consent) about new features or products.</li>
+                    <li><strong>Security & Fraud Prevention:</strong> To protect against unauthorized access, fraud, and security threats.</li>
+                    <li><strong>Legal Compliance:</strong> To comply with applicable laws, regulations, and legal obligations.</li>
+                    <li><strong>Research & Development:</strong> To develop new features, services, and improved offerings.</li>
+                </ul>
+            </section>
+
+            <!-- Data Sharing & Disclosure -->
+            <section class="policy-section" id="data-sharing">
+                <h2>4. Data Sharing & Disclosure</h2>
+                <p>We do <strong>not</strong> sell your personal data. However, we may share information in the following circumstances:</p>
+
+                <h3>Service Providers</h3>
+                <p>We share data with trusted service providers who assist us in operating our website and conducting our business (hosting providers, analytics services, payment processors) under strict confidentiality agreements.</p>
+
+                <h3>Legal Requirements</h3>
+                <p>We may disclose information when required by law, court order, or governmental request, or when necessary to protect our legal rights.</p>
+
+                <h3>Business Transfers</h3>
+                <p>If Synova is acquired, merges, or sells assets, your information may be transferred as part of that transaction. We will provide notice before this occurs.</p>
+
+                <h3>With Your Consent</h3>
+                <p>We may share information with third parties when you explicitly consent to such sharing.</p>
+            </section>
+
+            <!-- Data Security -->
+            <section class="policy-section" id="data-security">
+                <h2>5. Data Security</h2>
+                <p>
+                    We implement industry-standard security measures to protect your personal information, including:
+                </p>
+                <ul>
+                    <li>HTTPS encryption for all data in transit</li>
+                    <li>Secure data storage with encryption at rest</li>
+                    <li>Regular security audits and vulnerability assessments</li>
+                    <li>Access controls limiting employee access to personal data</li>
+                    <li>Secure authentication mechanisms</li>
+                </ul>
+                <p>
+                    However, no method of transmission over the Internet is 100% secure. While we strive to protect your information, we cannot guarantee absolute security.
+                </p>
+            </section>
+
+            <!-- Your Rights -->
+            <section class="policy-section" id="user-rights">
+                <h2>6. Your Rights</h2>
+                <p>Depending on your location, you may have the following rights:</p>
+
+                <h3>Right to Access</h3>
+                <p>You have the right to request a copy of the personal information we hold about you.</p>
+
+                <h3>Right to Rectification</h3>
+                <p>You can request that we correct inaccurate or incomplete information.</p>
+
+                <h3>Right to Deletion</h3>
+                <p>You have the right to request deletion of your personal information, subject to certain legal exceptions.</p>
+
+                <h3>Right to Restrict Processing</h3>
+                <p>You can request that we limit how we use your information.</p>
+
+                <h3>Right to Data Portability</h3>
+                <p>You have the right to receive your information in a structured, commonly used format.</p>
+
+                <h3>Right to Opt-Out</h3>
+                <p>You can opt out of promotional communications at any time by clicking the unsubscribe link or contacting us.</p>
+
+                <h3>Right to Object</h3>
+                <p>You can object to certain processing of your information.</p>
+
+                <p>To exercise any of these rights, please contact us using the information provided in the Contact Us section.</p>
+            </section>
+
+            <!-- Data Retention -->
+            <section class="policy-section" id="retention">
+                <h2>7. Data Retention</h2>
+                <p>
+                    We retain personal information only as long as necessary to fulfill the purposes for which it was collected or as required by law. The retention period depends on the context of the processing:
+                </p>
+                <ul>
+                    <li><strong>Account Data:</strong> Retained for the duration of your account and a reasonable period thereafter.</li>
+                    <li><strong>Support Communications:</strong> Retained for up to 2 years after last contact.</li>
+                    <li><strong>Cookies:</strong> Session cookies are deleted when you close your browser; persistent cookies may remain up to 1 year.</li>
+                    <li><strong>Analytics Data:</strong> Aggregated and anonymized data may be retained longer.</li>
+                    <li><strong>Legal Records:</strong> Retained as required by applicable law.</li>
+                </ul>
+            </section>
+
+            <!-- Children's Privacy -->
+            <section class="policy-section" id="children">
+                <h2>8. Children's Privacy</h2>
+                <p>
+                    Our services are not directed to individuals under 13 years old (or the applicable age of digital consent in your jurisdiction). We do not knowingly collect personal information from children. If we become aware that a child has provided us with personal information, we will delete such information immediately and take steps to terminate the child's account.
+                </p>
+                <p>
+                    If you believe a child has provided us with information, please contact us immediately at <strong>hello@synova.ai</strong>.
+                </p>
+            </section>
+
+            <!-- Third-Party Links -->
+            <section class="policy-section" id="third-party">
+                <h2>9. Third-Party Links & Services</h2>
+                <p>
+                    Our website may contain links to third-party websites. We are not responsible for the privacy practices of external sites. This Privacy Policy applies only to our services. Please review the privacy policies of any third-party sites before providing information.
+                </p>
+            </section>
+
+            <!-- International Transfers -->
+            <section class="policy-section" id="international">
+                <h2>10. International Data Transfers</h2>
+                <p>
+                    Your information may be transferred to, stored in, and processed in countries other than your country of residence. These countries may have data protection laws that differ from your home country. By using our services, you consent to the transfer of your information to countries outside your country of residence, which may include countries without data protection laws equivalent to your home country.
+                </p>
+                <p>
+                    We implement appropriate safeguards to protect your information during international transfers, including standard contractual clauses and adequacy decisions where applicable.
+                </p>
+            </section>
+
+            <!-- Contact Us -->
+            <section class="policy-section" id="contact">
+                <h2>11. Contact Us</h2>
+                <p>If you have questions about this Privacy Policy or our privacy practices, please contact us:</p>
+                <div class="contact-info">
+                    <p><strong>Synova</strong></p>
+                    <p><strong>Email:</strong> <a href="mailto:hello@synova.ai">hello@synova.ai</a></p>
+                    <p><strong>Response Time:</strong> We will respond to privacy inquiries within 30 days</p>
+                </div>
+            </section>
+
+            <!-- Updates -->
+            <section class="policy-section">
+                <h2>12. Policy Updates</h2>
+                <p>
+                    We may update this Privacy Policy from time to time. When we make material changes, we will notify you by updating the "Last Updated" date at the top of this page and, if required, by sending you a notification email.
+                </p>
+                <p>
+                    Your continued use of our services after any changes constitutes your acceptance of the updated Privacy Policy.
+                </p>
+            </section>
+
+            <!-- GDPR/CCPA Notice -->
+            <section class="policy-section">
+                <h2>13. GDPR & CCPA Compliance</h2>
+
+                <h3>For Users in the European Union (GDPR)</h3>
+                <p>
+                    Under the General Data Protection Regulation (GDPR), you have additional rights including the right to lodge a complaint with your local data protection authority if you believe we have violated your rights.
+                </p>
+
+                <h3>For Users in California (CCPA)</h3>
+                <p>
+                    Under the California Consumer Privacy Act (CCPA), California residents have the right to know what personal information is collected, used, shared, or sold, and to delete personal information.
+                </p>
+                <p>
+                    To exercise these rights, please contact us at <a href="mailto:hello@synova.ai">hello@synova.ai</a>.
+                </p>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Synova. All rights reserved.</p>
+            <p>
+                <a href="privacy.html">Privacy Policy</a> | 
+                <a href="index.html">Home</a>
+            </p>
+        </div>
+    </footer>
+</body>
+</html>
