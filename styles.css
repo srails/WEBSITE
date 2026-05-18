@@ -877,10 +877,11 @@ cite {
     .section-wrap { padding: 0 32px; }
     .hero { padding: 100px 32px 0; }
     .hero-body { grid-template-columns: 1fr; gap: 2.5rem; }
-    .hero-side { max-width: 480px; }
+    .hero-side { max-width: 100%; }
     .hero-metrics { grid-template-columns: repeat(2, 1fr); }
     .metric:nth-child(2) { border-right: none; }
-    .metric:nth-child(3) { border-right: 1px solid var(--rule); }
+    .metric:nth-child(3) { border-right: 1px solid var(--rule); padding-left: 0; }
+    .metric:nth-child(4) { border-right: none; }
     .about-grid { grid-template-columns: 1fr; gap: 3rem; }
     .service-inner { grid-template-columns: 48px 1fr; }
     .service-tags { display: none; }
@@ -890,43 +891,68 @@ cite {
 }
 
 @media (max-width: 768px) {
-    .nav-inner { padding: 1rem 24px; }
+    .nav-inner { padding: 1rem 20px; }
     .nav-menu, .nav-cta { display: none; }
     .hamburger { display: flex; }
 
-    .section-wrap { padding: 0 24px; grid-template-columns: 1fr; }
+    .section-wrap { padding: 0 20px; grid-template-columns: 1fr; }
     .section-num { display: none; }
 
-    .hero { padding: 90px 24px 0; }
-    .hero-top { flex-direction: column; align-items: flex-start; gap: 0.5rem; }
-    .hero-title { font-size: clamp(2.75rem, 10vw, 5rem); }
-    .hero-metrics { grid-template-columns: repeat(2, 1fr); }
-    .metric:nth-child(3) { border-right: none; padding-left: 0; }
-    .metric:nth-child(4) { padding-left: 2rem; border-right: none; }
+    .hero {
+        padding: 80px 20px 0;
+        min-height: auto;
+    }
+    .hero-top {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.4rem;
+        margin-bottom: 2.5rem;
+    }
+    .hero-body {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        margin-bottom: 3rem;
+    }
+    .hero-title { font-size: clamp(2.5rem, 10vw, 4rem); }
+    .hero-metrics {
+        grid-template-columns: 1fr 1fr;
+        gap: 0;
+    }
+    .metric { padding: 1.25rem 0; }
+    .metric:nth-child(1) { border-right: 1px solid var(--rule); padding-right: 1.5rem; }
+    .metric:nth-child(2) { border-right: none; padding-left: 1.5rem; }
+    .metric:nth-child(3) { border-right: 1px solid var(--rule); border-top: 1px solid var(--rule); padding-right: 1.5rem; padding-left: 0; }
+    .metric:nth-child(4) { border-right: none; border-top: 1px solid var(--rule); padding-left: 1.5rem; }
+    .metric + .metric { padding-left: 0; }
 
-    .about { padding: 5rem 0; }
-    .services { padding: 5rem 0; }
-    .products { padding: 5rem 0; }
+    .about { padding: 4rem 0; }
+    .services { padding: 4rem 0; }
+    .products { padding: 4rem 0; }
 
-    .service-inner { grid-template-columns: 1fr; gap: 1rem; }
+    .service-inner { grid-template-columns: 1fr; gap: 0.75rem; padding: 2rem 0; }
     .service-num { display: none; }
 
-    .product-row { grid-template-columns: 1fr; gap: 1rem; padding: 2rem 0; }
+    .product-row { grid-template-columns: 1fr; gap: 0.75rem; padding: 2rem 0; }
     .product-meta { flex-direction: row; align-items: center; gap: 1rem; }
 
     .form-row { grid-template-columns: 1fr; }
 
-    .contact-hed { padding: 5rem 24px 3rem; }
-    .contact-body { padding: 3rem 24px; }
-    .footer { padding: 1.5rem 24px; }
-    .footer-inner { flex-direction: column; align-items: flex-start; }
+    .contact-hed { padding: 4rem 20px 2.5rem; }
+    .contact-body { padding: 2.5rem 20px; }
+    .footer { padding: 1.5rem 20px; }
+    .footer-inner { flex-direction: column; align-items: flex-start; gap: 1rem; }
     .footer-tagline { display: none; }
 }
 
 @media (max-width: 480px) {
-    .hero-metrics { grid-template-columns: 1fr 1fr; }
-    .metric { padding: 1rem 0; }
-    .metric + .metric { padding-left: 1rem; }
-    .hero-actions { flex-direction: column; width: 100%; }
+    .nav-inner { padding: 1rem 16px; }
+    .hero { padding: 75px 16px 0; }
+    .hero-title { font-size: 2.25rem; }
+    .hero-description { font-size: 0.95rem; }
+    .hero-actions { width: 100%; }
     .btn-primary { width: 100%; justify-content: center; }
+    .section-wrap { padding: 0 16px; }
+    .contact-hed { padding: 3rem 16px 2rem; }
+    .contact-body { padding: 2rem 16px; }
+    .footer { padding: 1.25rem 16px; }
 }
