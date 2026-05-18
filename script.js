@@ -77,6 +77,19 @@ document.addEventListener('DOMContentLoaded', function() {
         feature.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
         observer.observe(feature);
     });
+
+    // Contact form handler
+    const contactForm = document.querySelector('.contact-form');
+    if (contactForm) {
+        contactForm.addEventListener('submit', function(e) {
+            const submitBtn = contactForm.querySelector('button[type="submit"]');
+            const originalText = submitBtn.textContent;
+            
+            // Change button text to indicate loading
+            submitBtn.textContent = 'Sending...';
+            submitBtn.disabled = true;
+        });
+    }
 });
 
 // Smooth active link highlighting
