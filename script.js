@@ -61,17 +61,37 @@ document.addEventListener('DOMContentLoaded', function () {
         revealEls.forEach(el => el.classList.add('visible'));
     }
 
-    // --- Contact form ---
+    // --- Contact form (EmailJS) ---
+    // Replace these three values with your own from emailjs.com
+    const EMAILJS_PUBLIC_KEY  = 'YOUR_PUBLIC_KEY';
+    const EMAILJS_SERVICE_ID  = 'YOUR_SERVICE_ID';
+    const EMAILJS_TEMPLATE_ID = 'YOUR_TEMPLATE_ID';
+
+    emailjs.init({ publicKey: EMAILJS_PUBLIC_KEY });
+
     const form      = document.getElementById('contactForm');
     const submitBtn = document.getElementById('submitBtn');
     const success   = document.getElementById('formSuccess');
 
     if (form) {
-        form.addEventListener('submit', () => {
+        form.addEventListener('submit', function (e) {
+            e.preventDefault();
             const orig = submitBtn.textContent;
             submitBtn.textContent = 'Sending…';
             submitBtn.disabled = true;
-            setTimeout(() => { submitBtn.textContent = orig; submitBtn.disabled = false; }, 5000);
+
+            emailjs.sendForm(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, form)
+                .then(() => {
+                    success.style.display = 'block';
+                    form.reset();
+                })
+                .catch(() => {
+                    alert('Something went wrong — please try again or email us directly.');
+                })
+                .finally(() => {
+                    submitBtn.textContent = orig;
+                    submitBtn.disabled = false;
+                });
         });
     }
 });
