@@ -63,9 +63,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // --- Contact form (EmailJS) ---
     // Replace these three values with your own from emailjs.com
-    const EMAILJS_PUBLIC_KEY  = 'YOUR_PUBLIC_KEY';
-    const EMAILJS_SERVICE_ID  = 'YOUR_SERVICE_ID';
-    const EMAILJS_TEMPLATE_ID = 'YOUR_TEMPLATE_ID';
+    const EMAILJS_PUBLIC_KEY  = 'knCdrg5XVd7dMYq8l';
+    const EMAILJS_SERVICE_ID  = 'service_m4y1y24';
+    const EMAILJS_TEMPLATE_ID = 'template_jahld8k';
 
     emailjs.init({ publicKey: EMAILJS_PUBLIC_KEY });
 
