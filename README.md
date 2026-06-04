@@ -14,21 +14,30 @@ A modern, professional landing page for Synova, an AI-first company focused on i
 
 ## Sections
 
-1. **Hero Section** - Eye-catching introduction with CTA buttons
+1. **Hero Section** - Eye-catching introduction with CTA buttons and key metrics
 2. **About Section** - Company mission and core values with feature highlights
-3. **Products Section** - Showcase of upcoming products:
+3. **Services Section** - Core capabilities we deliver for businesses:
+   - AI Product Development - end-to-end AI-native software
+   - Workflow Automation - intelligent automation pipelines
+   - Data Intelligence - analytics platforms and insight dashboards
+   - AI Implementation & Claude Integration - deploying Anthropic's Claude
+     across business tools, data, and workflows (custom agents, copilots,
+     retrieval over private knowledge), chosen for its deep reasoning, large
+     context window, native tool use, and safety
+4. **Products Section** - What we're shipping:
    - Omey Tide - Intelligent automation for data-driven insights
    - Produce Wash System - AI-optimized agricultural solutions
-4. **Contact Section** - Secure contact form (email hidden from scrapers)
-5. **Privacy & Terms** - Dedicated pages for legal compliance
-6. **Footer** - Copyright and links to legal pages
+   - Synova Copilot - Claude-powered, enterprise-ready business copilot
+5. **Contact Section** - Secure contact form (handled via EmailJS)
+6. **Privacy & Terms** - Dedicated pages for legal compliance
+7. **Footer** - Copyright and links to legal pages
 
 ## Technical Stack
 
 - **HTML5** - Semantic markup
 - **CSS3** - Modern styling with CSS Grid, Flexbox, and animations
 - **Vanilla JavaScript** - No dependencies or frameworks
-- **Formspree** - Secure form handling (optional, free)
+- **EmailJS** - Client-side contact form handling (no backend required)
 - **Mobile First** - Responsive design approach
 
 ## Local Development

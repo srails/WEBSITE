@@ -580,6 +580,8 @@ cite {
     max-width: 520px;
 }
 
+.service-info p strong { color: var(--cream); font-weight: 500; }
+
 .service-tags {
     display: flex;
     flex-direction: column;
