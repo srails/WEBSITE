@@ -26,7 +26,6 @@ A modern, professional landing page for Synova, an AI-first company focused on i
      context window, native tool use, and safety
 4. **Products Section** - What we're shipping:
    - Omey Tide - Intelligent automation for data-driven insights
-   - Produce Wash System - AI-optimized agricultural solutions
    - Synova Copilot - Claude-powered, enterprise-ready business copilot
 5. **Contact Section** - Secure contact form (handled via EmailJS)
 6. **Privacy & Terms** - Dedicated pages for legal compliance
