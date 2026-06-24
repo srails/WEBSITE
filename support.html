@@ -69,6 +69,10 @@
 
         /* Header */
         header { padding: 4.5rem 0 2.5rem; border-bottom: 1px solid var(--rule); }
+        .hero-grid {
+            display: grid; grid-template-columns: 1fr 250px;
+            gap: 3rem; align-items: center;
+        }
         .eyebrow {
             font-family: var(--font-mono); font-size: 0.72rem; font-weight: 500;
             letter-spacing: 0.14em; text-transform: uppercase; color: var(--amber);
@@ -81,7 +85,26 @@
         h1 em { font-style: italic; color: var(--amber); }
         .lead {
             color: var(--muted); font-weight: 300; font-size: 1.05rem;
-            margin-top: 1.25rem; max-width: 620px;
+            margin-top: 1.25rem; max-width: 560px;
+        }
+        .hero-btn {
+            display: inline-block; margin-top: 1.75rem;
+            font-family: var(--font-mono); font-size: 0.78rem; font-weight: 600;
+            letter-spacing: 0.08em; text-transform: uppercase;
+            color: var(--bg); background: var(--amber);
+            padding: 0.8rem 1.5rem; transition: var(--trans);
+        }
+        .hero-btn:hover { background: #FFB840; transform: translateY(-1px); }
+        .hero-shot { justify-self: end; }
+        .hero-shot img {
+            display: block; width: 100%; max-width: 250px; height: auto;
+            border-radius: 32px; border: 1px solid var(--rule);
+            box-shadow: 0 24px 70px rgba(0, 0, 0, 0.55);
+        }
+        @media (max-width: 720px) {
+            .hero-grid { grid-template-columns: 1fr; gap: 2.25rem; }
+            .hero-shot { justify-self: start; }
+            .hero-shot img { max-width: 230px; }
         }
 
         /* Sections */
@@ -160,12 +183,21 @@
     <div class="wrap">
 
         <header>
-            <span class="eyebrow">Omey Tide / Support</span>
-            <h1>How can we <em>help?</em></h1>
-            <p class="lead">
-                Welcome to support for <strong>Omey Tide</strong>. If you have a question,
-                a bug to report, or feedback to share, we're here for you.
-            </p>
+            <div class="hero-grid">
+                <div class="hero-copy">
+                    <span class="eyebrow">Omey Tide / Support</span>
+                    <h1>How can we <em>help?</em></h1>
+                    <p class="lead">
+                        Welcome to support for <strong>Omey Tide</strong> — real-time tide
+                        times and crossing windows for the Omey Island causeway. Got a
+                        question, a bug to report, or feedback to share? We're here for you.
+                    </p>
+                    <a class="hero-btn" href="mailto:siriusappdevelopment@gmail.com?subject=Omey%20Tide%20Support">Email support →</a>
+                </div>
+                <div class="hero-shot">
+                    <img src="assets/omey-tide-screenshot.png" alt="Omey Tide app showing the Omey Island causeway tide status and today's crossing windows" loading="lazy">
+                </div>
+            </div>
         </header>
 
         <section>
