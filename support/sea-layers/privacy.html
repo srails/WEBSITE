@@ -1,0 +1,281 @@
+<!doctype html>
+<!--
+  Hostable copy of docs/privacy-policy.md. Self-contained: no scripts, no
+  fonts, no requests — it can sit on any static host, and the URL is what
+  App Store Connect and the App Store listing point at. Edit the markdown
+  and mirror the change here; the two must not drift.
+-->
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Sea Layers — Privacy Policy</title>
+    <meta
+      name="description"
+      content="How the Sea Layers marine chart app handles your data. It never reports where you fish."
+    />
+    <style>
+      :root {
+        color-scheme: light dark;
+        --bg: #f6f8fb;
+        --surface: #ffffff;
+        --ink: #0b1626;
+        --text: #1f2a3a;
+        --muted: #5b6b80;
+        --rule: #dce3ec;
+        --accent: #1d6fa3;
+      }
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --bg: #0b1626;
+          --surface: #111f33;
+          --ink: #eef4fb;
+          --text: #cfdbe9;
+          --muted: #8fa3bb;
+          --rule: #22334a;
+          --accent: #6fb6e4;
+        }
+      }
+      * { box-sizing: border-box; }
+      body {
+        margin: 0;
+        padding: 48px 16px 96px;
+        background: var(--bg);
+        color: var(--text);
+        font: 16px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          Helvetica, Arial, sans-serif;
+        -webkit-text-size-adjust: 100%;
+      }
+      main {
+        max-width: 42rem;
+        margin: 0 auto;
+        background: var(--surface);
+        border: 1px solid var(--rule);
+        border-radius: 14px;
+        padding: 40px 32px;
+      }
+      @media (max-width: 560px) {
+        body { padding: 24px 16px 64px; }
+        main { padding: 28px 20px; border-radius: 12px; }
+      }
+      h1 {
+        margin: 0 0 6px;
+        font-size: 1.75rem;
+        line-height: 1.2;
+        color: var(--ink);
+        letter-spacing: -0.01em;
+      }
+      .effective {
+        margin: 0 0 32px;
+        color: var(--muted);
+        font-size: 0.875rem;
+      }
+      h2 {
+        margin: 40px 0 12px;
+        font-size: 1.125rem;
+        color: var(--ink);
+        padding-top: 20px;
+        border-top: 1px solid var(--rule);
+      }
+      h3 {
+        margin: 26px 0 8px;
+        font-size: 0.8125rem;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        color: var(--muted);
+      }
+      p { margin: 0 0 14px; }
+      ul { margin: 0 0 14px; padding-left: 1.25rem; }
+      li { margin-bottom: 10px; }
+      strong { color: var(--ink); font-weight: 650; }
+      a { color: var(--accent); }
+      .lede {
+        font-size: 1.0625rem;
+        border-left: 3px solid var(--accent);
+        padding-left: 16px;
+        margin-bottom: 18px;
+      }
+      footer {
+        max-width: 42rem;
+        margin: 20px auto 0;
+        color: var(--muted);
+        font-size: 0.8125rem;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>Sea Layers — Privacy Policy</h1>
+      <p class="effective">
+        Effective 20 September 2026. Applies to the Sea Layers iOS app
+        (including the Sea Layers UAT beta) published by Synova Pty Ltd.
+        Contact: <a href="mailto:siriusappdevelopment@gmail.com">siriusappdevelopment@gmail.com</a>
+      </p>
+
+      <h2>The short version</h2>
+      <p class="lede">
+        <strong>Sea Layers never reports where you fish.</strong> Your
+        position, your waypoints, your chart view and the places you tap stay
+        on your phone. They are not uploaded, not to us and not to anyone else
+        — not rounded, not hashed, not in aggregate.
+      </p>
+      <p>
+        What we do collect, if you leave it on, is which <em>features</em> you
+        use: the layers you switch on, the data sources you pick, the screens
+        you open. That is it.
+      </p>
+
+      <h2>What never leaves your device</h2>
+      <ul>
+        <li>
+          <strong>Your position and heading.</strong> Sea Layers asks for
+          location so it can draw your vessel on the chart and read depth and
+          temperature where you actually are. That fix is used on the device
+          and is never transmitted. Location is requested only while the app is
+          in use; there is no background location.
+        </li>
+        <li>
+          <strong>Your waypoints.</strong> Names and coordinates are stored in
+          the app's own storage on your device. There is no account and no
+          sync.
+        </li>
+        <li>
+          <strong>Where you tap.</strong> Probing the chart, measuring a
+          distance, panning and zooming — none of these report a coordinate, a
+          bounding box or a camera position.
+        </li>
+        <li>
+          <strong>Your chart data.</strong> Downloaded tiles live in the app's
+          storage on your device.
+        </li>
+      </ul>
+
+      <h2>What we collect</h2>
+      <p>
+        Only while <strong>Settings → Privacy → Share usage data</strong> is
+        on. It is on by default and you can switch it off at any time.
+      </p>
+      <ul>
+        <li>
+          <strong>How you have the app set up, and what you use.</strong> Which
+          layers are switched on and in what order; which data source you chose
+          for each; which delivery regions you ticked; forecast level; basemap;
+          units; whether the compass, GPS marker or temperature breaks are
+          shown; whether you have set a custom colour window. Also counts — how
+          many waypoints, regions or depth bands you have — never their names,
+          values or positions.
+        </li>
+        <li>
+          <strong>What you did, by kind.</strong> A screen was opened. A probe
+          happened, and what answered it: open water, land, a statutory zone,
+          or one of your own marks — never where the tap fell. A measurement
+          was started. A waypoint was saved, from the chart or typed. A zoning
+          rules table was opened.
+        </li>
+        <li>
+          <strong>Downloads and sync.</strong> The size of a download you
+          confirmed, how many steps or cells it covered, and whether a sync
+          finished, partly finished, or failed.
+        </li>
+        <li>
+          <strong>About the app and the phone.</strong> App version and build,
+          which JavaScript bundle is running (an over-the-air update id), the
+          update channel, iOS version, and your device's time zone. Not your
+          device's name, and not an advertising identifier — Sea Layers does
+          not use one.
+        </li>
+        <li>
+          <strong>An anonymous install identifier.</strong> A random id
+          generated on first launch so repeat use can be counted as one install
+          rather than many. It is not linked to you, to an account, or to any
+          identifier Apple provides.
+        </li>
+        <li>
+          <strong>Approximate location, from your internet connection.</strong>
+          Our analytics provider derives a country and city from the IP address
+          your requests arrive from, the same way any website can. This is
+          <em>not</em> your GPS fix and is not the position drawn on your
+          chart; it is typically accurate to a city.
+        </li>
+      </ul>
+
+      <h3>Deliberately switched off</h3>
+      <p>
+        Sea Layers does not use touch autocapture (which would upload the text
+        of whatever you pressed — and a waypoint row is pressed by its name),
+        session replay, feature flags or surveys. There is no advertising, no
+        third-party tracking, no App Tracking Transparency prompt because there
+        is nothing to track, and no data is sold or shared for advertising.
+      </p>
+
+      <h2>Who processes it</h2>
+      <p>
+        Usage data is sent to <strong>PostHog</strong> (PostHog Inc., United
+        States cloud, <code>us.i.posthog.com</code>), which processes it on our
+        behalf. Their privacy policy is at
+        <a href="https://posthog.com/privacy">posthog.com/privacy</a>.
+      </p>
+      <p>
+        Events are batched on the device and sent a few kilobytes at a time. If
+        you are offline — which, on a boat, you often are — they queue and go
+        when you have a connection.
+      </p>
+
+      <h2>The chart data server</h2>
+      <p>
+        Downloading charts means asking our data server for tiles by region,
+        layer and zoom. Those requests carry your IP address and what you asked
+        for, and are kept in ordinary server logs. A tile request says which
+        region you chose to download; it does not say where you are within it.
+      </p>
+
+      <h2>Beta testing</h2>
+      <p>
+        While Sea Layers is distributed through TestFlight, Apple collects
+        crash logs and any feedback or screenshots you choose to send, and
+        shares them with us. That is Apple's process and is described in
+        Apple's own privacy policy.
+      </p>
+
+      <h2>Switching it off</h2>
+      <p>
+        <strong>Settings → Privacy → Share usage data.</strong> Switching it
+        off stops reporting immediately, discards anything queued but not yet
+        sent, and resets the anonymous install id, so a later switch back on
+        cannot be joined to what came before. The app works exactly the same
+        with it off.
+      </p>
+
+      <h2>Retention</h2>
+      <p>
+        Usage events are kept for as long as they are useful for improving the
+        app, and no longer than 24 months. Server request logs are kept for 90
+        days.
+      </p>
+
+      <h2>Your rights</h2>
+      <p>
+        Because there is no account, we usually cannot connect the data we hold
+        to you as a person. If you believe we hold data about you and want it
+        deleted, write to
+        <a href="mailto:siriusappdevelopment@gmail.com">siriusappdevelopment@gmail.com</a>
+        and tell us roughly when and where you used the app, and we will do
+        what we can to find and remove it.
+      </p>
+
+      <h2>Children</h2>
+      <p>
+        Sea Layers is not directed at children and we do not knowingly collect
+        data from anyone under 13.
+      </p>
+
+      <h2>Changes</h2>
+      <p>
+        If this policy changes materially we will update the effective date
+        above and note the change in the app's release notes.
+      </p>
+    </main>
+    <footer>Sea Layers · Synova Pty Ltd</footer>
+  </body>
+</html>
